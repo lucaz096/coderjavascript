@@ -94,8 +94,6 @@ function mostrarCarrito(productoAgregar) {
                     </button>`
     contenedorCarrito.appendChild(div)
     
-   
-
     eliminar()
 }
 
