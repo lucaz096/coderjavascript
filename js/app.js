@@ -1,5 +1,5 @@
 let carritoDeCompras = []
-
+Swal.fire('Bienvenidos A ModaNR')
 const contenedorProductos = document.getElementById('contenedor-productos');
 const contenedorCarrito = document.getElementById('carrito-contenedor');
 
@@ -104,7 +104,33 @@ function eliminar() {
         btn.addEventListener('click',(e)=>{
             btn.parentElement.remove();
             carritoDeCompras = carritoDeCompras.filter(item => item.id != e.target.parentElement.id)
-            actualizarCarrito()
+           
+            Swal.fire({
+                title: 'estas seguro?',
+                text: "Se Eliminara el Producto del Carrito!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, Eliminar!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire(
+                    'Eliminado!',
+                    'Esperamos Su compra.',
+                    'success'
+                  )
+                  actualizarCarrito();
+                }else
+                {
+                     Swal.fire(
+                      'Sigamos comprando!',
+                      'Que tenga una buena compra.',
+                      'success'
+                    )
+                }
+               
+              })
         })
     }
 }

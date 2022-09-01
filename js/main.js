@@ -9,10 +9,10 @@ class Usuario{
     }
 }
 
-
+Swal.fire('Bienvenidos A ModaNR')
 function menu(){
 
-    alert('Bienvenido a Moda NR');
+   
     let opcion;
 
     while(opcion != 4){
