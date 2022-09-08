@@ -141,7 +141,16 @@ function  actualizarCarrito (){
    precioTotal.innerText = carritoDeCompras.reduce((acc,el)=> acc + (el.precio * el.cantidad), 0)
 }                                                             
 
-
+document.getElementById("btnGithub").onclick = () =>{
+    
+    Swal.fire("Github");
+    fetch('https://api.github.com/users/lucaz096')
+    .then( (resp) =>resp.json() )
+    .then( (data) => {
+        console.info("obejeto github",data);
+ })
+}
+ 
 
 
 
