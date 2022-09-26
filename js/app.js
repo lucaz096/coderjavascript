@@ -150,6 +150,24 @@ document.getElementById("btnGithub").onclick = () =>{
         console.info("obejeto github",data);
  })
 }
+document.getElementById("btnPaises").onclick = () =>{
+ 
+    document.getElementById('idLoading').style.display="block";
+    document.getElementById("idMensajeLoading").innerText="Se solicitaron los datos";
+    console.log("Se solicito a la API");
+    fetch('https://restcountries.com/v3.1/all')
+    .then( (resp) =>{
+        console.log("volvio y tengo respuesta, transformo a JSON");
+        return resp.json()
+    })
+    .then( (data) => {
+        console.info("Ya esta en JSON",data);
+        document.getElementById("idMensajeLoading").innerText="Se termino la carga !!!";
+        document.getElementById('idLoading').style.display="none";
+        
+    })
+    console.info("Se termino la funcion !!!");
+}
  
 
 

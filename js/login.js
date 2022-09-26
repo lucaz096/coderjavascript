@@ -23,13 +23,13 @@ class Usuario{
 function validar(usuarioRegistrado, contraseñaRegistrada,reContraseña,email){
 
         if(usuarioRegistrado == "" || contraseñaRegistrada == "" ||reContraseña == "" || email == ""){
-        alert('los campos no deben estar vacio')
+            Swal.fire('los campos no deben estar vacio')
     }
         else if(contraseñaRegistrada.length < 6){
-        alert('la contraseña debe ser mayor a 6 digitos')
+            Swal.fire('la contraseña debe ser mayor a 6 digitos')
     }
         else if(contraseñaRegistrada != reContraseña){
-        alert('las contraseña no coinciden')
+            Swal.fire('las contraseña no coinciden')
     }
     else{
         datos.push(new Usuario(usuarioRegistrado,contraseñaRegistrada,email))
@@ -59,12 +59,12 @@ function ingresar(){
         if((recuperoLocalS[0].usuario == usuario) && (recuperoLocalS[0].pass == contraseña)){
             document.getElementById('user').value = "";
             document.getElementById('pass').value="";
-            alert('inicio de sesion correcto')
+            Swal.fire('inicio de sesion correcto')
         }else{
-            alert('Vete intruso!')
+            Swal.fire('Vete intruso!')
         }
     }else{
-        alert('lo siento algo debe estar mal!')
+        Swal.fire('lo siento algo debe estar mal!')
     }
     
 }
